@@ -1,15 +1,16 @@
-"""Figure 2: three-dimensional representations of the constellation.
+"""Figure 3: three-dimensional representations of the constellation.
 
-Corrections from review:
-  - every panel now carries axis labels with units and tick labels;
-  - a legend distinguishes LEO from MEO nodes;
-  - axis ranges are symmetric and consistent, replacing the asymmetric
-    -10000 to 7500 range of the original panel A;
-  - the altitude of each panel is stated on the panel itself, and the Earth is
-    drawn translucent so that satellites are visibly above the surface rather
-    than appearing to rest on it.
+A. Three LEO orbital planes with a MEO backbone plane.
+B. Fifty satellites distributed by Fibonacci sphere initialisation followed by
+   repulsion relaxation.
+C. A Walker constellation of four single-plane shells.
+
+Every panel carries axis labels in kilometres, tick labels and a legend
+distinguishing the shells. Axis ranges are symmetric. The Earth is drawn
+translucent with a wireframe at the orbital radius, since at plot scale the
+550 km altitude is only 8.6 per cent of the Earth's radius and would otherwise
+appear to rest on the surface.
 """
-
 import math
 import numpy as np
 import matplotlib
