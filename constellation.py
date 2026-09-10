@@ -1,5 +1,5 @@
 """
-FAROS - Figure 6 controlled comparison
+FAROS - Figure 4 controlled comparison
 ======================================
 Reviewer response, Major Issue #1.
 
@@ -20,7 +20,7 @@ Design here:
     which isolates "more satellites" from "a higher layer".
   * Propagation and processing delay are modelled and reported separately.
 
-Usage:  python faros_fig6_controlled.py
+Usage:  python faros_fig4_controlled.py
 """
 
 import math
