@@ -1,10 +1,9 @@
-"""Figure 1: altitude against delay, hop count and signal-to-noise ratio.
+"""Figure 2: altitude against delay, hop count and signal-to-noise ratio.
 
-Three corrections from review:
-  A. tick labels enlarged for print legibility;
-  B. discrete simulated hop counts plotted as markers, no fitted curve;
-  C. SNR on a decibel axis, the link-budget convention, replacing the linear
-     scale that compressed everything above 750 km against the axis.
+A. One-way vertical propagation delay against altitude.
+B. Simulated hop counts, plotted as discrete markers.
+C. Signal-to-noise ratio on a decibel axis, the link-budget convention, with
+   the required carrier-to-noise ratio and margin marked.
 """
 
 import math
