@@ -1,4 +1,7 @@
-"""Monte Carlo over constellation orientation: does more orbital planes help?"""
+"""Monte Carlo over constellation orientation: effect of orbital plane count.
+
+Produces Table 3 of the manuscript.
+"""
 import math, random, statistics
 import orbit_model as T
 
