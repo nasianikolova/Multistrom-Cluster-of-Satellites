@@ -1,14 +1,11 @@
-"""Does increasing the number of orbital planes improve latency and redundancy?
+"""Effect of orbital plane count on latency and redundancy.
 
-The Discussion claims that a higher number of orbits gives better performance,
-latency and redundancy. No experiment in the manuscript varies the number of
-orbits, so this script tests the claim directly.
+Holds the total satellite count and the shell altitude constant, varies only
+how those satellites are distributed across orbital planes, and measures:
 
-Design: hold the total satellite count and the shell altitude constant, vary
-only how those satellites are distributed across orbital planes, and measure
     - end-to-end modelled delay for a fixed Sydney-Tokyo ground pair
-    - redundancy, as the number of node-disjoint paths between the two
-      ground stations (equivalently the minimum vertex cut)
+    - redundancy, as the number of node-disjoint paths between the two ground
+      stations (equivalently the minimum vertex cut)
 
 Both endpoints, altitude, satellite count, link constraints and delay model are
 identical across every configuration.
