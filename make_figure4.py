@@ -1,13 +1,12 @@
-"""Render the publication version of Figure 6 as a single three-panel image.
+"""Figure 4: controlled comparison of end-to-end delay with and without a MEO
+backbone, rendered as a single three-panel image.
 
 Panel A  LEO-only topology and the selected route.
-Panel B  LEO + MEO topology, showing BOTH the route the router selects and the
-         backbone route that is available but rejected, so the geometric
-         trade-off (fewer hops, longer path) is visible directly.
+Panel B  LEO + MEO topology, showing both the route the router selects and the
+         backbone route that is available but rejected, so the trade-off of
+         fewer hops against longer path is visible directly.
 Panel C  Total end-to-end delay against per-hop processing delay, with the
          break-even point marked.
-
-One file, one figure number, one caption.
 """
 
 import numpy as np
