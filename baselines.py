@@ -1,8 +1,7 @@
 """Orbital and ground-relay baselines for the Sydney-Tokyo route.
 
-Recommended Issue 3 asks how the multistrom geometry compares against orbital
-or ground relay geometries. Four architectures are compared, all of them
-in-space alternatives for the same route and the same endpoints:
+Four in-space architectures are compared over the same route and the same
+endpoints:
 
     A  Bent-pipe LEO       ground - one LEO satellite - ground, no ISLs
     B  Ground relay        ground - satellite - intermediate ground station -
@@ -10,12 +9,13 @@ in-space alternatives for the same route and the same endpoints:
     C  Single MEO relay    ground - one MEO satellite - ground
     D  Meshed LEO + ISLs   the architecture of this paper
 
-Architecture B is the way a satellite network reaches beyond a single
-satellite's footprint without inter-satellite links: it comes back down to a
-relay station on the ground and goes up again. It is the direct alternative to
-using ISLs, and it is the comparison the reviewer asked for.
+Architecture B is how a satellite network reaches beyond a single satellite's
+footprint without inter-satellite links: it returns to a relay station on the
+ground and goes up again.
 
 Candidate ground relay sites are real locations on the Sydney-Tokyo corridor.
+
+Usage:  python baselines.py
 """
 
 import math
