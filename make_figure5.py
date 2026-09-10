@@ -1,13 +1,9 @@
-"""Routing state over time on a fixed constellation.
+"""Figure 5: routing state over time on a fixed constellation.
 
-Reviewer Major Issue 9 offers two options: add a manoeuvre model with delta-v,
-or define rearrangement as dynamic routing over a fixed constellation and
-"simulate the routing state over time". This implements the second.
-
-No propulsion, no delta-v, no orbit changes. Satellites simply move along their
-orbits under Keplerian circular motion and the Earth rotates beneath them. At
-each epoch the connectivity graph is rebuilt from scratch and the route is
-recomputed. What changes over time is the ROUTE, not the constellation.
+No propulsion, no delta-v, no orbit changes. Satellites move along their orbits
+under Keplerian circular motion and the Earth rotates beneath them. At each
+epoch the connectivity graph is rebuilt from scratch and the route is
+recomputed. What changes over time is the route, not the constellation.
 
 Reported per epoch: whether a path exists, its hop count, physical length and
 modelled delay, and whether the route differs from the previous epoch, which is
