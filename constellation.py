@@ -1,28 +1,23 @@
 """
-FAROS - Figure 4 controlled comparison
-======================================
-Reviewer response, Major Issue #1.
+FAROS - constellation simulation core.
 
-Fixes three defects in the original notebook (cell 10):
-  (1) the graph was built BEFORE the endpoint nodes were moved, so Dijkstra ran
-      on stale edge weights while only the plotted coordinates changed;
-  (2) the "MEO backbone" was not a backbone at all - the two ground stations
-      were simply relocated to 3000 km. No MEO relay nodes existed;
-  (3) the two scenarios differed in satellite count, endpoint type, endpoint
-      altitude AND endpoint angular separation (60 deg vs 90 deg).
+Two-dimensional constellation model with shortest-path routing.
 
-Design here:
-  * Graph is rebuilt automatically after ANY topology change (dirty flag).
-  * Endpoints are IDENTICAL ground stations in every scenario, placed at the
-    true Sydney-Tokyo central angle (70.38 deg, 7826 km great-circle).
-  * Only the presence of the MEO layer changes between A and B.
-  * Scenario C adds the same number of extra satellites to LEO instead of MEO,
-    which isolates "more satellites" from "a higher layer".
-  * Propagation and processing delay are modelled and reported separately.
+The connectivity graph is rebuilt after any change to node positions, and
+shortest_path() raises rather than routing on a stale graph.
 
-Usage:  python faros_fig4_controlled.py
+A link is admitted only if it satisfies all of: Earth occultation, a minimum
+ground elevation angle, a range limit for inter-satellite links, and a link
+budget threshold.
+
+End-to-end delay is decomposed into propagation, transmission, processing,
+switching and queueing terms. Per-node terms are charged only at intermediate
+relay nodes; the destination does not forward the packet and is not charged.
+
+Produces Table 2 of the manuscript.
+
+Usage:  python constellation.py
 """
-
 import math
 import heapq
 from dataclasses import dataclass, field
